@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConfigFragment">
+
+    <fragment
+        android:id="@+id/ConfigFragment"
+        android:name="com.jamespfluger.roboshield.fragments.ConfigFragment"
+        android:label="@string/config_fragment_label"
+        tools:layout="@layout/fragment_config">
+
+        <action
+            android:id="@+id/action_ConfigFragment_to_AreaCodeListFragment"
+            app:destination="@id/AreaCodeListFragment"
+            app:enterAnim="@transition/slide_in_down"
+            app:exitAnim="@transition/slide_out_up"
+            app:popEnterAnim="@transition/slide_in_up"
+            app:popExitAnim="@transition/slide_out_down"/>
+        <action
+            android:id="@+id/action_ConfigFragment_to_AllowListFragment"
+            app:destination="@id/AllowListFragment"
+            app:enterAnim="@transition/slide_in_left"
+            app:exitAnim="@transition/slide_out_right"
+            app:popEnterAnim="@transition/slide_in_right"
+            app:popExitAnim="@transition/slide_out_left"/>
+        <action
+            android:id="@+id/action_ConfigFragment_to_BlockListFragment"
+            app:destination="@id/BlockListFragment"
+            app:enterAnim="@transition/slide_in_right"
+            app:exitAnim="@transition/slide_out_left"
+            app:popEnterAnim="@transition/slide_in_left"
+            app:popExitAnim="@transition/slide_out_right"/>
+    </fragment>
+
+    <!--  Area Codes -->
+    <fragment
+        android:id="@+id/AreaCodeListFragment"
+        android:name="com.jamespfluger.roboshield.lists.ItemListFragment"
+        android:label="@string/area_code_list_fragment_label"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_AreaCodeListFragment_to_ConfigFragment"
+            app:destination="@id/AreaCodeListFragment" />
+    </fragment>
+
+    <!--  Allow List -->
+    <fragment
+        android:id="@+id/AllowListFragment"
+        android:name="com.jamespfluger.roboshield.lists.ItemListFragment"
+        android:label="@string/allow_list_fragment_label"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_AllowListFragment_to_ConfigFragment"
+            app:destination="@id/ConfigFragment" />
+    </fragment>
+
+    <!--  Block List -->
+    <fragment
+        android:id="@+id/BlockListFragment"
+        android:name="com.jamespfluger.roboshield.lists.ItemListFragment"
+        android:label="@string/block_list_fragment_label"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_BlockListFragment_to_ConfigFragment"
+            app:destination="@id/ConfigFragment" />
+    </fragment>
+</navigation>

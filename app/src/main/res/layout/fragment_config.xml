@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ConfigFragment"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Block all numbers -->
+        <LinearLayout
+            android:id="@+id/configBlockAllNumbersContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingTop="7dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="7dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/configBlockAllNumbersTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block all numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/configBlockAllNumbersDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block ALL numbers. No calls will get through."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configBlockAllNumbersSwtich"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                android:focusable="false"
+                android:tag="blockAllNumbers" />
+        </LinearLayout>
+
+        <!-- Block private numbers -->
+        <LinearLayout
+            android:id="@+id/configBlockPrivateNumbersContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:clickable="true"
+            android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_weight="0.15">
+                <TextView
+                    android:id="@+id/configBlockPrivateNumbersTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block private numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/configBlockPrivateNumbersDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any calls from private or unknown numbers will not get through."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:maxLines="100"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configBlockPrivateNumbersSwtich"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:tag="blockPrivateNumbers"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <!-- Block known spam numbers -->
+        <LinearLayout
+            android:id="@+id/configBlockKnownSpamContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:clickable="true"
+            android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_weight="0.15">
+                <TextView
+                    android:id="@+id/configBlockKnownSpamTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block known spam numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/configBlockKnownSpamDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blocks calls coming from known a database of known spammers."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:maxLines="100"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configBlockKnownSpamSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:tag="blockKnownSpamCallers"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <!-- Block non-contacts -->
+        <LinearLayout
+            android:id="@+id/configBlockNonContactsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:clickable="true"
+            android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_weight="0.15">
+                <TextView
+                    android:id="@+id/configBlockNonContactsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block calls from non-contacts"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/configBlockNonContactsDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any calls coming from someone not in your contacts will be blocked."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:maxLines="100"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configBlockNonContactsSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:tag="blockNonContacts"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <!-- Send blocked calls to voicemail -->
+        <LinearLayout
+            android:id="@+id/configSendCallsToVoicemailContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:clickable="true"
+            android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_weight="0.15">
+                <TextView
+                    android:id="@+id/configSendCallsToVoicemailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send blocked calls to voicemail"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/configSendCallsToVoicemailDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blocked calls will be sent to voicemail where the caller may leave a voicemail."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:maxLines="100"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configSendCallsToVoicemailSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:tag="sendCallsToVoicemail"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <!-- Send notifications after calls are blocked -->
+        <LinearLayout
+            android:id="@+id/configUseNotificationsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="10dp"
+            android:clickable="true"
+            android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="start"
+                android:layout_weight="0.15">
+                <TextView
+                    android:id="@+id/configUseNotificationsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notify me when a call is blocked"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/configUseNotificationsDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications will be sent after a call is blocked."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:maxLines="100"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/configUseNotificationsSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85"
+                android:tag="sendNotifications"
+                android:clickable="false"
+                android:focusable="false"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        
+        <!-- Block calls starting with these numbers -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/configBlockAreaCodesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:background="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/configBlockStartingDigitsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="Block numbers by area code"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/configBlockStartingDigitsDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:maxLines="100"
+                    android:text="Tap here to configure area codes that will block calls from phones starting with those digits."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Allow list -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/configAllowListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/configAllowListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="Allow specific numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    android:enabled="false" />
+
+                <TextView
+                    android:id="@+id/configAllowListDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:maxLines="100"
+                    android:text="Tap here to configure numbers that will always be allowed through, regardless of other settings."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:enabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Block list -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:orientation="horizontal"
+            android:paddingStart="30dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/configBlockListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/configBlockListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="Block specific numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="18sp"
+                    android:enabled="false" />
+
+                <TextView
+                    android:id="@+id/configBlockListDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:maxLines="100"
+                    android:text="Tap here to configure numbers that will always be blocked through, regardless of other settings except for numbers on the allow list.."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:enabled="false" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
