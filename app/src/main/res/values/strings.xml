@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Call Blocker</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="config_fragment_label">First Fragment</string>
+    <string name="allow_list_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="preference_file_key">settings</string>
+    <string name="area_code_list_fragment_label">Area codes</string>
+    <string name="block_list_fragment_label">Block list</string>
+    <string name="listDeleteButtonDescription">Delete</string>
+    <string name="listEditButtonDescription">Edit</string>
+    <string name="dummyPhoneNumberValue">555-555-5555</string>
+    <string name="callWasBlocked">A call was blocked</string>
+    <string name="appName">Call Blocker</string>
+</resources>
